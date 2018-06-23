@@ -31,7 +31,8 @@ public class SourceFile
 		{
 			//read the user input String and convert file to String
 			input = new Scanner(Paths.get(sourcePath));			
-			sourceTxt = input. useDelimiter("\\A").next();
+			sourceTxt = input.useDelimiter("\\A").next();
+			//System.out.println(sourceTxt); 
 			//close scanner
 			input.close();			
 		}
@@ -41,7 +42,7 @@ public class SourceFile
 			System.exit(0);
 		}
 		//remove punctuation from string and make all lower case for better comparison
-		sourceTxt = sourceTxt.replaceAll("[^a-zA-Z \n]", "").toLowerCase();
+		sourceTxt = sourceTxt.replaceAll("[^a-zA-Z\\d \n]", "").toLowerCase();
 		
 		//read string to break into words
 		Scanner reader = new Scanner(sourceTxt);
